@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PhotoObject.h"
 
-@interface PhotoManager : NSObject
+@interface PhotoManager : NSObject  <UICollectionViewDataSource>
 
 @property (nonatomic) NSMutableArray <PhotoObject *> *photoArray;
 

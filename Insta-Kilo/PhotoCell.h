@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PhotoObject;
 
 @interface PhotoCell : UICollectionViewCell
+
+@property (nonatomic) PhotoObject *photoObject;
 
 @end

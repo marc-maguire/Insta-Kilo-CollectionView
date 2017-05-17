@@ -7,6 +7,7 @@
 //
 
 #import "PhotoCell.h"
+#import "PhotoObject.h"
 
 @interface PhotoCell()
 
@@ -16,5 +17,12 @@
 @end
 
 @implementation PhotoCell
+
+-(void)setPhotoObject:(PhotoObject *)photoObject {
+    
+    self.imageView.image = photoObject.image;
+    
+    _photoObject = photoObject;
+}
 
 @end

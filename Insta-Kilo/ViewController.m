@@ -7,10 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "PhotoManager.h"
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewController;
+@property (nonatomic) PhotoManager *photoManager;
 
 
 @end
@@ -19,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.photoManager = [[PhotoManager alloc]init];
+    self.collectionViewController.dataSource = self.photoManager;
 }
 
 
