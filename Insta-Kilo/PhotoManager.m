@@ -12,6 +12,7 @@
 #import "PhotoCell.h"
 #import "PhotoManager.h"
 #import "PhotoSearchOrganizer.h"
+#import "HeaderView.h"
 
 @interface PhotoManager()
 
@@ -96,6 +97,18 @@
     return photos;
     
     
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    HeaderView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:(NSString *)kind withReuseIdentifier:@"cell" forIndexPath:indexPath];
+      NSInteger section = indexPath.section;
+    PhotoOrganizer *po = self.photoArray[section];
+    cell.organizer = po;
+    
+    
+    
+    return cell;
 }
 
 -(NSMutableArray <PhotoOrganizer *> *) createOrganizer {

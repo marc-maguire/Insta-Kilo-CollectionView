@@ -11,7 +11,8 @@
 
 @interface ViewController () <UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewController;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @property (nonatomic) PhotoManager *photoManager;
 
 
@@ -22,7 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.photoManager = [[PhotoManager alloc]init];
-    self.collectionViewController.dataSource = self.photoManager;
+    self.collectionView.dataSource = self.photoManager;
+    
+    CGFloat width = self.view.frame.size.width / 3;
+    ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = CGSizeMake(width, width);
 }
 
 
