@@ -13,6 +13,9 @@
 		9283D8381ECCB55A00F5F8E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9283D8361ECCB55A00F5F8E5 /* Main.storyboard */; };
 		9283D83A1ECCB55A00F5F8E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9283D8391ECCB55A00F5F8E5 /* Assets.xcassets */; };
 		9283D83D1ECCB55A00F5F8E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9283D83B1ECCB55A00F5F8E5 /* LaunchScreen.storyboard */; };
+		9283D8461ECCB8F200F5F8E5 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283D8451ECCB8F200F5F8E5 /* PhotoCell.m */; };
+		9283D8491ECCBC8200F5F8E5 /* PhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283D8481ECCBC8200F5F8E5 /* PhotoObject.m */; };
+		9283D84C1ECCBCA200F5F8E5 /* PhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283D84B1ECCBCA200F5F8E5 /* PhotoManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		9283D8391ECCB55A00F5F8E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9283D83C1ECCB55A00F5F8E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9283D83E1ECCB55A00F5F8E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9283D8441ECCB8F200F5F8E5 /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		9283D8451ECCB8F200F5F8E5 /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		9283D8471ECCBC8200F5F8E5 /* PhotoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoObject.h; sourceTree = "<group>"; };
+		9283D8481ECCBC8200F5F8E5 /* PhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoObject.m; sourceTree = "<group>"; };
+		9283D84A1ECCBCA200F5F8E5 /* PhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoManager.h; sourceTree = "<group>"; };
+		9283D84B1ECCBCA200F5F8E5 /* PhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +69,12 @@
 			children = (
 				9283D8331ECCB55A00F5F8E5 /* ViewController.h */,
 				9283D8341ECCB55A00F5F8E5 /* ViewController.m */,
+				9283D8441ECCB8F200F5F8E5 /* PhotoCell.h */,
+				9283D8451ECCB8F200F5F8E5 /* PhotoCell.m */,
+				9283D8471ECCBC8200F5F8E5 /* PhotoObject.h */,
+				9283D8481ECCBC8200F5F8E5 /* PhotoObject.m */,
+				9283D84A1ECCBCA200F5F8E5 /* PhotoManager.h */,
+				9283D84B1ECCBCA200F5F8E5 /* PhotoManager.m */,
 				9283D8361ECCB55A00F5F8E5 /* Main.storyboard */,
 				9283D8391ECCB55A00F5F8E5 /* Assets.xcassets */,
 				9283D83B1ECCB55A00F5F8E5 /* LaunchScreen.storyboard */,
@@ -150,8 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9283D8491ECCBC8200F5F8E5 /* PhotoObject.m in Sources */,
+				9283D8461ECCB8F200F5F8E5 /* PhotoCell.m in Sources */,
 				9283D8351ECCB55A00F5F8E5 /* ViewController.m in Sources */,
 				9283D8321ECCB55A00F5F8E5 /* AppDelegate.m in Sources */,
+				9283D84C1ECCBCA200F5F8E5 /* PhotoManager.m in Sources */,
 				9283D82F1ECCB55A00F5F8E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
