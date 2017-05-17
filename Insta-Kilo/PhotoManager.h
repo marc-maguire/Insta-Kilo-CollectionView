@@ -13,7 +13,22 @@
 @interface PhotoManager : NSObject  <UICollectionViewDataSource>
 
 //@property (nonatomic) NSMutableDictionary <NSString *, NSMutableArray<PhotoObject *> *>* photoBook;
+@property (nonatomic) NSMutableArray <NSString *> *subjects;
+@property (nonatomic) NSMutableArray <NSString *> *locations;
+@property (nonatomic) NSMutableArray <PhotoObject *> *photos;
+
+@property (nonatomic) NSMutableDictionary <NSString *, NSMutableArray<PhotoObject *> *> *subjectDictionary;
+@property (nonatomic) NSMutableDictionary <NSString *, NSMutableArray<PhotoObject *> *> *locationDictionary;
+
+
+
+
 
 @property (nonatomic) NSMutableArray <PhotoOrganizer *> *photoArray;
+
+-(void)updateSubjects;
+-(void)updateLocations;
+-(void)updateSubjectDictionary;
+-(void)updatelocationDictionary;
 
 @end

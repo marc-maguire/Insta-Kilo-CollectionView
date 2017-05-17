@@ -11,8 +11,10 @@
 @interface PhotoObject : NSObject
 
 @property (nonatomic,readonly) NSString *name;
+@property (nonatomic,readonly) NSString *subject;
+@property (nonatomic,readonly) NSString *location;
 @property (nonatomic) UIImage *image;
 
--(instancetype)initWithName:(NSString *)name;
+-(instancetype)initWithName:(NSString *)name andSubject:(NSString *)subject andLocation:(NSString *)location;
 
 @end

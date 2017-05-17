@@ -26,7 +26,14 @@
     
     if (self = [super init]){
         
-        _photoArray = [self createOrganizer];
+//        _photoArray = [self createOrganizer];
+        _photos = [self createPhotos];
+        _subjects = [[NSMutableArray alloc]init];
+        _locations = [[NSMutableArray alloc]init];
+        
+        
+        _subjectDictionary = [NSMutableDictionary new];
+        _locationDictionary = [NSMutableDictionary new];
  
         
 //        [self createPhotos];
@@ -86,18 +93,7 @@
     
 }
 
--(NSMutableArray <PhotoObject *>*)createPhotos {
-    NSMutableArray *photos = [[NSMutableArray alloc]init];
-    NSInteger i = 1;
-    while (i < 11) {
-        PhotoObject *photoObject = [[PhotoObject alloc] initWithName:[NSString stringWithFormat:@"image%lu",i]];
-                                    [photos addObject:photoObject];
-        i++;
-    }
-    return photos;
-    
-    
-}
+
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     
@@ -111,20 +107,82 @@
     return cell;
 }
 
--(NSMutableArray <PhotoOrganizer *> *) createOrganizer {
-    NSMutableArray *organizers = [[NSMutableArray alloc]init];
+//-(NSMutableArray <PhotoOrganizer *> *) createOrganizer {
+//    NSMutableArray *organizers = [[NSMutableArray alloc]init];
+//    
+//    PhotoSearchOrganizer *object1 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject1"];
+//    PhotoSearchOrganizer *object2 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject2"];
+//    PhotoSearchOrganizer *object3 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject3"];
+//    [organizers addObject:object1];
+//    [organizers addObject:object2];
+//    [organizers addObject:object3];
+//    
+//    return organizers;
+//}
+
+-(void)updateSubjects{
     
-    PhotoSearchOrganizer *object1 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject1"];
-    PhotoSearchOrganizer *object2 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject2"];
-    PhotoSearchOrganizer *object3 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject3"];
-    [organizers addObject:object1];
-    [organizers addObject:object2];
-    [organizers addObject:object3];
+    for (PhotoObject *po in self.photos) {
+        if ([self.subjects containsObject:po.subject]) {
+            continue;
+        } else {
+            [self.subjects addObject:po.subject];
+        }
+    }
     
-    return organizers;
+    
+}
+-(void)updateLocations{
+    
+    for (PhotoObject *po in self.photos) {
+        if ([self.locations containsObject:po.location]) {
+            continue;
+        } else {
+            [self.locations addObject:po.location];
+        }
+    }
 }
 
+-(void)updateSubjectDictionary{
+    
+    for (NSString *subject in self.subjectDictionary) {
+        [self.subjectDictionary setValue:[[NSMutableArray alloc]init] forKey:subject];
+        for (PhotoObject *photo in self.photos) {
+            if ([photo.subject isEqualToString:subject]){
+                [self.subjectDictionary[subject] addObject:photo];
+            }
+        }
+    }
+    
+    
+}
+-(void)updatelocationDictionary{
+    
+    for (NSString *location in self.locationDictionary) {
+        [self.locationDictionary setValue:[[NSMutableArray alloc]init] forKey:location];
+        for (PhotoObject *photo in self.photos) {
+            if ([photo.location isEqualToString:location]){
+                [self.subjectDictionary[location] addObject:photo];
 
+            }
+        }
+    }
+    
+    
+}
+
+-(NSMutableArray <PhotoObject *>*)createPhotos {
+    NSMutableArray *photos = [[NSMutableArray alloc]init];
+    NSInteger i = 1;
+    while (i < 11) {
+        PhotoObject *po = [[PhotoObject alloc]initWithName:[NSString stringWithFormat:@"image%lu",i] andSubject:[NSString stringWithFormat:@"image%lu",i] andLocation:[NSString stringWithFormat:@"image%lu",i]];
+        [photos addObject:po];
+        i++;
+    }
+    return photos;
+    
+    
+}
 
 
 @end

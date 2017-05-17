@@ -21,17 +21,6 @@
     return self;
 }
 
--(NSMutableArray <PhotoObject *>*)createPhotos {
-    NSMutableArray *photos = [[NSMutableArray alloc]init];
-    NSInteger i = 1;
-    while (i < 11) {
-        PhotoObject *photoObject = [[PhotoObject alloc] initWithName:[NSString stringWithFormat:@"image%lu",i]];
-        [photos addObject:photoObject];
-        i++;
-    }
-    return photos;
-    
-    
-}
+
 
 @end
