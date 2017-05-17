@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "PhotoObject.h"
+#import "PhotoOrganizer.h"
 
 @interface PhotoManager : NSObject  <UICollectionViewDataSource>
 
-@property (nonatomic) NSMutableDictionary <NSString *, NSMutableArray<PhotoObject *> *>* photoBook;
+//@property (nonatomic) NSMutableDictionary <NSString *, NSMutableArray<PhotoObject *> *>* photoBook;
 
-@property (nonatomic) NSMutableArray <PhotoObject *> *photoArray;
+@property (nonatomic) NSMutableArray <PhotoOrganizer *> *photoArray;
 
 @end

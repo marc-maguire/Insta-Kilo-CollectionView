@@ -16,6 +16,8 @@
 		9283D8461ECCB8F200F5F8E5 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283D8451ECCB8F200F5F8E5 /* PhotoCell.m */; };
 		9283D8491ECCBC8200F5F8E5 /* PhotoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283D8481ECCBC8200F5F8E5 /* PhotoObject.m */; };
 		9283D84C1ECCBCA200F5F8E5 /* PhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283D84B1ECCBCA200F5F8E5 /* PhotoManager.m */; };
+		9283D84F1ECCD7E100F5F8E5 /* PhotoOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283D84E1ECCD7E100F5F8E5 /* PhotoOrganizer.m */; };
+		9283D8521ECCE27A00F5F8E5 /* PhotoSearchOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9283D8511ECCE27A00F5F8E5 /* PhotoSearchOrganizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		9283D8481ECCBC8200F5F8E5 /* PhotoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoObject.m; sourceTree = "<group>"; };
 		9283D84A1ECCBCA200F5F8E5 /* PhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoManager.h; sourceTree = "<group>"; };
 		9283D84B1ECCBCA200F5F8E5 /* PhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoManager.m; sourceTree = "<group>"; };
+		9283D84D1ECCD7E100F5F8E5 /* PhotoOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoOrganizer.h; sourceTree = "<group>"; };
+		9283D84E1ECCD7E100F5F8E5 /* PhotoOrganizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoOrganizer.m; sourceTree = "<group>"; };
+		9283D8501ECCE27A00F5F8E5 /* PhotoSearchOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSearchOrganizer.h; sourceTree = "<group>"; };
+		9283D8511ECCE27A00F5F8E5 /* PhotoSearchOrganizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSearchOrganizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,10 @@
 				9283D8451ECCB8F200F5F8E5 /* PhotoCell.m */,
 				9283D8471ECCBC8200F5F8E5 /* PhotoObject.h */,
 				9283D8481ECCBC8200F5F8E5 /* PhotoObject.m */,
+				9283D84D1ECCD7E100F5F8E5 /* PhotoOrganizer.h */,
+				9283D84E1ECCD7E100F5F8E5 /* PhotoOrganizer.m */,
+				9283D8501ECCE27A00F5F8E5 /* PhotoSearchOrganizer.h */,
+				9283D8511ECCE27A00F5F8E5 /* PhotoSearchOrganizer.m */,
 				9283D84A1ECCBCA200F5F8E5 /* PhotoManager.h */,
 				9283D84B1ECCBCA200F5F8E5 /* PhotoManager.m */,
 				9283D8361ECCB55A00F5F8E5 /* Main.storyboard */,
@@ -165,7 +175,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9283D84F1ECCD7E100F5F8E5 /* PhotoOrganizer.m in Sources */,
 				9283D8491ECCBC8200F5F8E5 /* PhotoObject.m in Sources */,
+				9283D8521ECCE27A00F5F8E5 /* PhotoSearchOrganizer.m in Sources */,
 				9283D8461ECCB8F200F5F8E5 /* PhotoCell.m in Sources */,
 				9283D8351ECCB55A00F5F8E5 /* ViewController.m in Sources */,
 				9283D8321ECCB55A00F5F8E5 /* AppDelegate.m in Sources */,

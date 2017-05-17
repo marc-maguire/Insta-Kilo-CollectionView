@@ -10,6 +10,8 @@
 #import "ViewController.h"
 #import "PhotoObject.h"
 #import "PhotoCell.h"
+#import "PhotoManager.h"
+#import "PhotoSearchOrganizer.h"
 
 @interface PhotoManager()
 
@@ -22,8 +24,12 @@
 -(instancetype)init {
     
     if (self = [super init]){
-        _photoArray = [self createPhotos];
-        _photoBook = [[NSMutableDictionary alloc]init];
+        
+        _photoArray = [self createOrganizer];
+ 
+        
+//        [self createPhotos];
+//        _photoBook = [[NSMutableDictionary alloc]init];
         
 //        for (PhotoObject *photoObject in _photoArray) {
 //            
@@ -36,14 +42,6 @@
     return self;
 }
 
--(NSMutableArray<PhotoObject *> *)photoArray {
-    
-    if (_photoArray == nil) {
-        _photoArray = [[NSMutableArray alloc] init];
-    }
-    
-    return _photoArray;
-}
 
 #pragma mark - Data Source Methods
 
@@ -66,12 +64,12 @@
 //        
 //    }
 //    return count;
-    return 1;
+   return  [self.photoArray count];
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return [self.photoArray count];
+    return [self.photoArray[section].photoArray count];
     
 }
 
@@ -79,7 +77,9 @@
     
     PhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.photoObject = self.photoArray[indexPath.row];
+    PhotoOrganizer *organizer = self.photoArray[indexPath.section];
+    PhotoObject *photoObject = organizer.photoArray[indexPath.row];
+    cell.photoObject = photoObject;
     
     return cell;
     
@@ -89,13 +89,26 @@
     NSMutableArray *photos = [[NSMutableArray alloc]init];
     NSInteger i = 1;
     while (i < 11) {
-        PhotoObject *photoObject = [[PhotoObject alloc] initWithName:[NSString stringWithFormat:@"image%lu",i] andSubject:@"photo" andLocation:[NSString stringWithFormat:@"location%lu",i]];
-        [photos addObject:photoObject];
+        PhotoObject *photoObject = [[PhotoObject alloc] initWithName:[NSString stringWithFormat:@"image%lu",i]];
+                                    [photos addObject:photoObject];
         i++;
     }
     return photos;
     
     
+}
+
+-(NSMutableArray <PhotoOrganizer *> *) createOrganizer {
+    NSMutableArray *organizers = [[NSMutableArray alloc]init];
+    
+    PhotoSearchOrganizer *object1 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject1"];
+    PhotoSearchOrganizer *object2 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject2"];
+    PhotoSearchOrganizer *object3 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject3"];
+    [organizers addObject:object1];
+    [organizers addObject:object2];
+    [organizers addObject:object3];
+    
+    return organizers;
 }
 
 
