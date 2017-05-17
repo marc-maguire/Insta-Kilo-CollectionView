@@ -58,8 +58,6 @@
 		9283D82C1ECCB55A00F5F8E5 /* Insta-Kilo */ = {
 			isa = PBXGroup;
 			children = (
-				9283D8301ECCB55A00F5F8E5 /* AppDelegate.h */,
-				9283D8311ECCB55A00F5F8E5 /* AppDelegate.m */,
 				9283D8331ECCB55A00F5F8E5 /* ViewController.h */,
 				9283D8341ECCB55A00F5F8E5 /* ViewController.m */,
 				9283D8361ECCB55A00F5F8E5 /* Main.storyboard */,
@@ -74,6 +72,8 @@
 		9283D82D1ECCB55A00F5F8E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9283D8301ECCB55A00F5F8E5 /* AppDelegate.h */,
+				9283D8311ECCB55A00F5F8E5 /* AppDelegate.m */,
 				9283D82E1ECCB55A00F5F8E5 /* main.m */,
 			);
 			name = "Supporting Files";
