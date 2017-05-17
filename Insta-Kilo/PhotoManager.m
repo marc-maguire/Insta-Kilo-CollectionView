@@ -23,6 +23,14 @@
     
     if (self = [super init]){
         _photoArray = [self createPhotos];
+        _photoBook = [[NSMutableDictionary alloc]init];
+        
+//        for (PhotoObject *photoObject in _photoArray) {
+//            
+//        }
+//        
+        
+        
     }
     
     return self;

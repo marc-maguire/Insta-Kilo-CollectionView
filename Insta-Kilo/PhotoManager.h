@@ -11,6 +11,8 @@
 
 @interface PhotoManager : NSObject  <UICollectionViewDataSource>
 
+@property (nonatomic) NSMutableDictionary <NSString *, NSMutableArray<PhotoObject *> *>* photoBook;
+
 @property (nonatomic) NSMutableArray <PhotoObject *> *photoArray;
 
 @end
