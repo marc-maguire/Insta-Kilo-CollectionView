@@ -13,7 +13,7 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSMutableArray <PhotoObject *> *photoArray;
-
-- (instancetype)initWithName:(NSString *)name;
+//
+//- (instancetype)initWithName:(NSString *)name;
 
 @end

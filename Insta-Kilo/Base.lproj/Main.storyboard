@@ -83,9 +83,20 @@
                             <constraint firstItem="Fnf-ww-c5p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zVA-bL-kUK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pou-u0-yWS"/>
+                    <navigationItem key="navigationItem" id="pou-u0-yWS">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="7QC-hw-BLP">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Subjects"/>
+                                <segment title="Locations"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Fnf-ww-c5p" id="Kpl-iV-E65"/>
+                        <outlet property="segmentedControl" destination="7QC-hw-BLP" id="sgY-DQ-KFw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

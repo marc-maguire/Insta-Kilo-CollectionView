@@ -12,22 +12,52 @@
 @interface ViewController () <UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @property (nonatomic) PhotoManager *photoManager;
 
 
 @end
 
-@implementation ViewController 
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.photoManager = [[PhotoManager alloc]init];
-    self.collectionView.dataSource = self.photoManager;
-    
     CGFloat width = self.view.frame.size.width / 3;
     ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = CGSizeMake(width, width);
+
+    
+    self.collectionView.dataSource = self.photoManager;
+
+//    [self.photoManager setupData];
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateSearchCritera:) name:@"segmentChangedNotification" object:nil];
+//    [self.collectionView reloadData];
 }
 
+-(void)updateSearchCritera:(NSNotification *)notification {
+    
+    NSString *value = [notification.userInfo[@"segmentValue"] stringValue];
 
+    
+    if ([value isEqualToString:@"0"]){
+        self.photoManager.sortParameter = @"subject";
+    } else {
+        self.photoManager.sortParameter = @"location";
+    }
+    [self.collectionView reloadData];
+    
+//    self.photoManager.sortParameter
+    
+    
+}
+- (IBAction)segmentedControlChanged:(UISegmentedControl *)sender {
+    
+    //create a reference to the notification center
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    
+    //create custom notification and what data to send.
+    NSNotification *segmentedControlNotification = [[NSNotification alloc]initWithName:@"segmentChangedNotification" object:self userInfo:@{ @"segmentValue" : @(sender.selectedSegmentIndex) }];
+    [notificationCenter postNotification:segmentedControlNotification];
+}
 @end

@@ -11,6 +11,6 @@
 
 @interface HeaderView : UICollectionReusableView
 
-@property (nonatomic) PhotoOrganizer *organizer;
+@property (nonatomic) Photo;
 
 @end

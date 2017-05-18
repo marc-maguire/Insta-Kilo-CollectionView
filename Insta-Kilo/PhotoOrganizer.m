@@ -9,17 +9,17 @@
 #import "PhotoOrganizer.h"
 
 @implementation PhotoOrganizer
-
-- (instancetype)initWithName:(NSString *)name {
-    
-    if (self = [super init]){
-        
-        _name = name;
-        _photoArray = [self createPhotos];
-    }
-    
-    return self;
-}
+//
+//- (instancetype)initWithName:(NSString *)name {
+//    
+//    if (self = [super init]){
+//        
+//        _name = name;
+////        _photoArray = [self createPhotos];
+////    }
+//    
+//    return self;
+//}
 
 
 
