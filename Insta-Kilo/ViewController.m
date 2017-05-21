@@ -26,21 +26,22 @@
     self.photoManager = [[PhotoManager alloc]init];
     CGFloat width = self.view.frame.size.width / 3;
     ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = CGSizeMake(width, width);
+    [self searchCriteriaChanged:self.segmentedControl];
 
     
     self.collectionView.dataSource = self.photoManager;
 
 //    [self.photoManager setupData];
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateSearchCritera:) name:@"segmentChangedNotification" object:nil];
+
 //    [self.collectionView reloadData];
 }
 
--(void)updateSearchCritera:(NSNotification *)notification {
+-(IBAction)searchCriteriaChanged:(UISegmentedControl *)sender{
     
-    NSString *value = [notification.userInfo[@"segmentValue"] stringValue];
+//    NSString *value = [notification.userInfo[@"segmentValue"] stringValue];
 
-    
-    if ([value isEqualToString:@"0"]){
+
+    if (sender.selectedSegmentIndex == 0){
         self.photoManager.sortParameter = @"subject";
     } else {
         self.photoManager.sortParameter = @"location";

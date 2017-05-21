@@ -26,13 +26,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4Rd-yV-WHS">
                                     <size key="itemSize" width="173" height="155"/>
-                                    <size key="headerReferenceSize" width="50" height="100"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="tFa-Iy-Szx" customClass="PhotoCell">
-                                        <rect key="frame" x="0.0" y="100" width="173" height="155"/>
+                                        <rect key="frame" x="0.0" y="50" width="173" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="173" height="155"/>
@@ -55,7 +55,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="l6R-ht-SDT" customClass="HeaderView">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfd-pn-skl">
@@ -65,6 +65,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="Sfd-pn-skl" firstAttribute="centerX" secondItem="l6R-ht-SDT" secondAttribute="centerX" id="6YP-wM-ayn"/>
                                         <constraint firstItem="Sfd-pn-skl" firstAttribute="centerY" secondItem="l6R-ht-SDT" secondAttribute="centerY" id="Ktx-D5-qJx"/>
@@ -92,6 +93,9 @@
                                 <segment title="Subjects"/>
                                 <segment title="Locations"/>
                             </segments>
+                            <connections>
+                                <action selector="searchCriteriaChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="1U0-Pp-JfZ"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>

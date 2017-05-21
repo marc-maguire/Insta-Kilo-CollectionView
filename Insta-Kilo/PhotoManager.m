@@ -63,24 +63,6 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
-    //    NSString *subject = [[NSString alloc]init];
-    //    NSInteger count = 1;
-    //
-    //    if (self.photoArray != nil) {
-    //        subject = self.photoArray[0].subject;
-    //    }
-    //
-    //    for (PhotoObject *photoObject in self.photoArray) {
-    //        if ([photoObject.subject isEqualToString:subject]){
-    //            continue;
-    //        } else {
-    //            count ++;
-    //        }
-    //
-    //
-    //    }
-    //    return count;
-    
     if ([self.sortParameter isEqualToString:@"search"]) {
         return [self.subjectDictionary count];
     } else {
@@ -88,10 +70,10 @@
     }
     
 }
-
+//should have a checker helper function to check subject and location
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    //    return [self.photoArray[section].photoArray count];
+
     if ([self.sortParameter isEqualToString:@"search"]) {
         NSString *key = self.subjects[section];
         return [self.subjectDictionary[key] count];
@@ -100,7 +82,7 @@
         return [self.locationDictionary[key] count];
     }
 }
-
+//should have a checker helper function to check subject and location
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     PhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
@@ -121,41 +103,30 @@
 }
 
 
+//headerview should update it's label based on passed in value.
+//should have a checker helper function to check subject and location
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-//
-//    HeaderView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:(NSString *)kind withReuseIdentifier:@"cell" forIndexPath:indexPath];
-//      NSInteger section = indexPath.section;
-//    PhotoOrganizer *po = self.photoArray[section];
-//    cell.organizer = po;
-//
-//    if ([self.sortParameter isEqualToString:@"search"]) {
-//        NSString *key = self.subjects[indexPath.section];
-//        PhotoObject *po = self.subjectDictionary[key][indexPath.row];
-//        cell.photoObject = po;
-//        return cell;
-//        
-//    } else {
-//        NSString *key = self.locations[indexPath.section];
-//        PhotoObject *po = self.locationDictionary[key][indexPath.row];
-//        cell.photoObject = po;
-//        return cell;
-//    }
-//
-//}
+    HeaderView *cell = [collectionView dequeueReusableSupplementaryViewOfKind:(NSString *)kind withReuseIdentifier:@"cell" forIndexPath:indexPath];
+      NSInteger section = indexPath.section;
+        cell.headerLabel.text = @"";
+    if ([self.sortParameter isEqualToString:@"subject"]) {
+        
+        NSString *key = self.subjects[section];
+        PhotoObject *po = self.subjectDictionary[key][indexPath.row];
+        cell.headerLabel.text = po.subject;
+        
+        
+    } else if ([self.sortParameter isEqualToString:@"location"]){
+        NSString *key = self.locations[section];
+        PhotoObject *po = self.locationDictionary[key][indexPath.row];
+        cell.headerLabel.text = po.location;
+        
+    }
+    return cell;
+}
 
-//-(NSMutableArray <PhotoOrganizer *> *) createOrganizer {
-//    NSMutableArray *organizers = [[NSMutableArray alloc]init];
-//
-//    PhotoSearchOrganizer *object1 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject1"];
-//    PhotoSearchOrganizer *object2 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject2"];
-//    PhotoSearchOrganizer *object3 = [[PhotoSearchOrganizer alloc]initWithName:@"Subject3"];
-//    [organizers addObject:object1];
-//    [organizers addObject:object2];
-//    [organizers addObject:object3];
-//
-//    return organizers;
-//}
+
 
 -(void)updateSubjects{
     
@@ -179,6 +150,9 @@
         }
     }
 }
+
+//could switch to 1 dictionary and that dictionary gets updated based on the sort parameter at the top.
+//then both of the below methods
 
 -(void)updateSubjectDictionary{
     
@@ -210,11 +184,18 @@
 -(NSMutableArray <PhotoObject *>*)createPhotos {
     NSMutableArray *photos = [[NSMutableArray alloc]init];
     NSInteger i = 1;
-    while (i < 11) {
-        PhotoObject *po = [[PhotoObject alloc]initWithName:[NSString stringWithFormat:@"image%lu",i] andSubject:[NSString stringWithFormat:@"image%lu",i] andLocation:[NSString stringWithFormat:@"image%lu",i]];
+    while (i < 10) {
+        PhotoObject *po = [[PhotoObject alloc]initWithName:[NSString stringWithFormat:@"image%lu",i] andSubject:[NSString stringWithFormat:@"Trip Photos"] andLocation:[NSString stringWithFormat:@"Sri Lanka"]];
         [photos addObject:po];
+        PhotoObject *po1 = [[PhotoObject alloc]initWithName:[NSString stringWithFormat:@"image%lu",i] andSubject:@"Mountain Climbing" andLocation:@"Adams Peak"];
+        [photos addObject:po1];
+
+        
         i++;
     }
+
+    
+    
     return photos;
     
     

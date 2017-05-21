@@ -11,6 +11,6 @@
 
 @interface HeaderView : UICollectionReusableView
 
-@property (nonatomic) Photo;
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 
 @end

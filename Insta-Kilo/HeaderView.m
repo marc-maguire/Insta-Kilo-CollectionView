@@ -11,18 +11,10 @@
 
 @interface HeaderView ()
 
-@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
-
-
 @end
 
 @implementation HeaderView
 
--(void)setOrganizer:(PhotoOrganizer *)organizer {
-    
-    self.headerLabel.text = organizer.name;
-    _organizer = organizer;
-}
 
 
 @end

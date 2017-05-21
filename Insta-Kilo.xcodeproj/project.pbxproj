@@ -80,16 +80,12 @@
 				9283D8341ECCB55A00F5F8E5 /* ViewController.m */,
 				9283D8441ECCB8F200F5F8E5 /* PhotoCell.h */,
 				9283D8451ECCB8F200F5F8E5 /* PhotoCell.m */,
-				9283D8471ECCBC8200F5F8E5 /* PhotoObject.h */,
-				9283D8481ECCBC8200F5F8E5 /* PhotoObject.m */,
-				9283D84D1ECCD7E100F5F8E5 /* PhotoOrganizer.h */,
-				9283D84E1ECCD7E100F5F8E5 /* PhotoOrganizer.m */,
-				9283D8501ECCE27A00F5F8E5 /* PhotoSearchOrganizer.h */,
-				9283D8511ECCE27A00F5F8E5 /* PhotoSearchOrganizer.m */,
-				9283D84A1ECCBCA200F5F8E5 /* PhotoManager.h */,
-				9283D84B1ECCBCA200F5F8E5 /* PhotoManager.m */,
 				9283D8531ECCEB8900F5F8E5 /* HeaderView.h */,
 				9283D8541ECCEB8900F5F8E5 /* HeaderView.m */,
+				9283D8471ECCBC8200F5F8E5 /* PhotoObject.h */,
+				9283D8481ECCBC8200F5F8E5 /* PhotoObject.m */,
+				9283D84A1ECCBCA200F5F8E5 /* PhotoManager.h */,
+				9283D84B1ECCBCA200F5F8E5 /* PhotoManager.m */,
 				9283D8361ECCB55A00F5F8E5 /* Main.storyboard */,
 				9283D8391ECCB55A00F5F8E5 /* Assets.xcassets */,
 				9283D83B1ECCB55A00F5F8E5 /* LaunchScreen.storyboard */,
@@ -102,6 +98,10 @@
 		9283D82D1ECCB55A00F5F8E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9283D84D1ECCD7E100F5F8E5 /* PhotoOrganizer.h */,
+				9283D84E1ECCD7E100F5F8E5 /* PhotoOrganizer.m */,
+				9283D8501ECCE27A00F5F8E5 /* PhotoSearchOrganizer.h */,
+				9283D8511ECCE27A00F5F8E5 /* PhotoSearchOrganizer.m */,
 				9283D8301ECCB55A00F5F8E5 /* AppDelegate.h */,
 				9283D8311ECCB55A00F5F8E5 /* AppDelegate.m */,
 				9283D82E1ECCB55A00F5F8E5 /* main.m */,
@@ -345,6 +345,7 @@
 				9283D8431ECCB55A00F5F8E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
